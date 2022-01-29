@@ -8,7 +8,7 @@ import { guildArr } from '$lib/stores/guild';
 
 </script>
 
-<nav class="h-full w-16 bg-red-400 flex flex-col items-center gap-4 py-5">
+<nav class="h-full w-16 min-w-[4rem] flex flex-col items-center gap-4">
     {#each guildArr as item}
         <NavbarItem />     
     {/each}
