@@ -23,7 +23,7 @@ import Topbar from '$lib/components/Topbar.svelte';
             <div class="flex flex-grow-[1] flex-col gap-2 justify-end items-end py-3 overflow-clip overflow-y-scroll">
                 <!-- <slot /> -->
                 {#each $messages as item}
-                    <Message message={{content: item.content, isSelf: item.isSelf}}/>
+                    <Message message={{content: item.content, isSelf: item.isSelf}} />
                 {/each}
             </div>
             <Messagebar />
