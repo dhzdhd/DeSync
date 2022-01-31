@@ -3,7 +3,6 @@
     import type { Message } from '$lib/stores/message';
     import { fly } from 'svelte/transition';
 
-
     export let message: Message;
 </script>
 
