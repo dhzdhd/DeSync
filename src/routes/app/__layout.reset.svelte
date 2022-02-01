@@ -17,19 +17,12 @@ import Topbar from '$lib/components/Topbar.svelte';
 <div class="bg-dark_primary h-screen w-screen flex flex-row pt-10 pb-5 gap-3">
     <Navbar />
     <Channelbar />
-    <div class="flex flex-col items-start grow-[1] min-w-[40rem] gap-7">
+    <div class="flex flex-col items-start grow-[1] min-w-[40rem] gap-3">
         <Topbar />
-        <div class="flex flex-col w-full max-h-screen py-5 flex-grow-[1] rounded-2xl bg-dark_secondary">
-            <div class="flex flex-grow-[1] flex-col gap-2 justify-end items-end py-3 overflow-clip overflow-y-scroll">
-                <!-- <slot /> -->
-                {#each $messages as item}
-                    <Message message={{content: item.content, isSelf: item.isSelf}} />
-                {/each}
-            </div>
+        <div class="flex flex-col flex-grow-[1] w-full py-5 rounded-2xl bg-dark_secondary">
+            <slot />
             <Messagebar />
         </div>
     </div>
-    <div class="">
     <Memberbar />
-    </div>
 </div>
