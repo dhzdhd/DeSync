@@ -1,17 +1,22 @@
 <script lang="ts">
     import { messages } from "$lib/stores/message";
     import type { Message } from '$lib/stores/message';
-import { convertMessage } from "$lib/backend/converter";
-
+    import { convertMessage } from "$lib/backend/converter";
 
     let message: string;
+
+    const getDate = (): string => {
+        let today = new Date();
+        let time = today.toLocaleTimeString();
+        return `${time.slice(0, time.length - 3)}`;
+    }
 
     const submitMessage = () => {
         if (!message.trim()) {
             return;
         }
 
-        $messages.push({content: message, isSelf: true});
+        $messages.push({content: message, isSelf: true, timeStamp: getDate()});
         $messages = $messages;
 
         message = '';

@@ -33,6 +33,7 @@
   "dependencies": {
     "@dicebear/avatars": "^4.10.2",
     "@dicebear/avatars-bottts-sprites": "^4.10.2",
-    "gun": "^0.2020.1235"
+    "gun": "^0.2020.1235",
+    "svelte-emoji-picker": "^1.1.2"
   }
 }
