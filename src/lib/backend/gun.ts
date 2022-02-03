@@ -3,6 +3,7 @@ import 'gun/sea';
 import 'gun/axe';
 import { writable } from 'svelte/store';
 import type { Writable } from 'svelte/store';
+import type { IGunChainReference } from 'gun/types/chain';
 
 export interface User {
   username?: string;
@@ -11,16 +12,22 @@ export interface User {
 
 export const userDetails: Writable<User> = writable({});
 
-export const db = GUN();
-export const user = db.user().recall({ sessionStorage: true });
+export let db: IGunChainReference;
+export let user: IGunChainReference;
 
-user.get('alias').on((value) => userDetails.set({ username: value }));
+export const initGun = () => {
+  db = GUN();
+  user = db.user().recall({ sessionStorage: true });
 
-db.on(async (data, key) => {
-  if (key == 'auth') {
-    const alias = await user.get('alias'); // username string
-    userDetails.set({ username: alias.toString() });
+  user.get('alias').on((value) => userDetails.set({ username: value }));
 
-    console.log(`signed in as ${alias}`);
-  }
-});
+  db.on(async (data, key) => {
+    console.log('bro');
+    if (key == 'auth') {
+      const alias = await user.get('alias'); // username string
+      userDetails.set({ username: alias.toString() });
+
+      console.log(`signed in as ${alias}`);
+    }
+  });
+};

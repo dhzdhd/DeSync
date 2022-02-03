@@ -9,28 +9,30 @@
   let password: string;
   let error: string;
 
+  $: if (error) {
+    setTimeout(() => {
+      error = '';
+    }, 1000);
+  }
+
   const login = () => {
     user.auth(username, password, (err) => {
-      console.log(err);
-      error = err.toString();
-
-      if (error) {
-        return;
-      }
+      error = err.err;
     });
-    goto('/app');
+
+    if (!error) goto('/app');
   };
 
   const register = () => {
     user.create(username, password, (err) => {
       if (err) {
-        error = err.toString();
+        error = err.err;
       } else {
         login();
       }
-      return;
     });
-    goto('/app');
+
+    if (!error) goto('/app');
   };
 </script>
 
@@ -53,7 +55,7 @@
         bind:value={password}
         placeholder="Password"
         class="bg-dark_secondary border border-slate-200 h-14 rounded-xl px-2"
-        type="text"
+        type="password"
       />
     </form>
     <div class="flex flex-row gap-5 items-center justify-center rounded-b-2xl">
@@ -73,8 +75,8 @@
       </button>
     </div>
     <!-- Error modal -->
-    {#if error !== ''}
-      <ErrorDialog errorMessage={error} />
+    {#if error}
+      <div class="mt-5"><ErrorDialog errorMessage={error} /></div>
     {/if}
   </div>
 </div>

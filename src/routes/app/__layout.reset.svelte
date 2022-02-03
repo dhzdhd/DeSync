@@ -14,7 +14,7 @@
   // onMount(() => {});
 </script>
 
-<div class="bg-dark_primary h-screen w-screen flex flex-row pt-10 pb-5 gap-3">
+<div class="bg-dark_primary h-screen w-screen flex flex-row py-5 gap-3">
   <Navbar />
   <Channelbar />
   <div class="flex flex-col items-start grow-[1] min-w-[40rem] gap-3">
