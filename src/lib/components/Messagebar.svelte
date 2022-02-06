@@ -1,7 +1,8 @@
 <script lang="ts">
   import { messages } from '$lib/stores/message';
-  import type { Message } from '$lib/stores/message';
+  import type { Message } from '$lib/backend/interface';
   import { convertMessage } from '$lib/backend/converter';
+import { userDetails } from '$lib/backend/gun';
 
   let message: string;
 
@@ -16,7 +17,7 @@
       return;
     }
 
-    $messages.push({ content: message, isSelf: true, timeStamp: getDate() });
+    $messages.push({ content: message, author: $userDetails.username!, timestamp: getDate() });
     $messages = $messages;
 
     message = '';

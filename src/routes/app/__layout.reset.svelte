@@ -1,4 +1,6 @@
 <script lang="ts">
+  import '../../app.css';
+
   import Channelbar from '$lib/components/Channelbar.svelte';
   import Memberbar from '$lib/components/Memberbar.svelte';
   import Message from '$lib/components/Message.svelte';
@@ -8,13 +10,15 @@
   import Topbar from '$lib/components/Topbar.svelte';
   import { messages } from '$lib/stores/message';
   import { onMount } from 'svelte';
+  import { initGun } from '$lib/backend/gun';
 
-  import '../../app.css';
+  onMount(() => {
+    initGun();
+  });
 
-  // onMount(() => {});
 </script>
 
-<div class="bg-dark_primary h-screen w-screen flex flex-row py-5 gap-3">
+<div class="bg-dark_primary h-screen w-screen flex flex-row py-5 gap-1">
   <Navbar />
   <Channelbar />
   <div class="flex flex-col items-start grow-[1] min-w-[40rem] gap-3">

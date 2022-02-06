@@ -4,11 +4,7 @@ import 'gun/axe';
 import { writable } from 'svelte/store';
 import type { Writable } from 'svelte/store';
 import type { IGunChainReference } from 'gun/types/chain';
-
-export interface User {
-  username?: string;
-  password?: string;
-}
+import type { User } from './interface';
 
 export const userDetails: Writable<User> = writable({});
 
