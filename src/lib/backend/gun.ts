@@ -19,6 +19,8 @@ export const initGun = () => {
 
   db.on(async (data, key) => {
     console.log('bro');
+    console.log(data);
+
     if (key == 'auth') {
       const alias = await user.get('alias'); // username string
       userDetails.set({ username: alias.toString() });

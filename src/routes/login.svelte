@@ -40,35 +40,35 @@
   <title>Login</title>
 </svelte:head>
 
-<div class="h-screen w-screen fixed flex items-center justify-center">
+<div class="fixed flex h-screen w-screen items-center justify-center">
   <!-- Login form -->
-  <div class="p-5 w-[25rem] form rounded-2xl shadow-2xl bg-dark_secondary text-white">
-    <form class="top flex flex-col justify-center gap-5 px-5 mb-5">
-      <span class="text-4xl mb-10">Login</span>
+  <div class="form w-[25rem] rounded-2xl bg-dark_secondary p-5 text-white shadow-2xl">
+    <form class="top mb-5 flex flex-col justify-center gap-5 px-5">
+      <span class="mb-10 text-4xl">Login</span>
       <input
         bind:value={username}
         placeholder="Username"
-        class="bg-dark_secondary border border-slate-200 h-14 rounded-xl px-2"
+        class="h-14 rounded-xl border border-slate-200 bg-dark_secondary px-2"
         type="text"
       />
       <input
         bind:value={password}
         placeholder="Password"
-        class="bg-dark_secondary border border-slate-200 h-14 rounded-xl px-2"
+        class="h-14 rounded-xl border border-slate-200 bg-dark_secondary px-2"
         type="password"
       />
     </form>
-    <div class="flex flex-row gap-5 items-center justify-center rounded-b-2xl">
+    <div class="flex flex-row items-center justify-center gap-5 rounded-b-2xl">
       <button
         on:click={login}
-        class="w-1/2 h-14 mt-5 shadow-lg active:shadow-none rounded-xl bg-dark_accent text-lg"
+        class="mt-5 h-14 w-1/2 rounded-xl bg-dark_accent text-lg shadow-lg active:shadow-none"
         type="submit"
       >
         <span>Login</span>
       </button>
       <button
         on:click={register}
-        class="w-1/2 h-14 mt-5 shadow-lg active:shadow-none rounded-xl bg-dark_accent text-lg"
+        class="mt-5 h-14 w-1/2 rounded-xl bg-dark_accent text-lg shadow-lg active:shadow-none"
         type="submit"
       >
         <span>Sign Up</span>

@@ -2,7 +2,7 @@
   import '../../app.css';
   import type { Message } from '$lib/backend/interface';
   import { fly } from 'svelte/transition';
-import { user, userDetails } from '$lib/backend/gun';
+  import { user, userDetails } from '$lib/backend/gun';
 
   export let message: Message;
 </script>
@@ -10,12 +10,13 @@ import { user, userDetails } from '$lib/backend/gun';
 <!-- Message container -->
 <div
   in:fly={{ x: 100 }}
-  class="flex items-center flex-col mx-5 min-w-[20rem] text-white {message.author == $userDetails.username
+  class="mx-5 flex min-w-[20rem] flex-col items-center text-white {message.author ==
+  $userDetails.username
     ? 'bg-dark_accent'
     : 'bg-dark_secondary'} rounded-2xl rounded-br-sm"
 >
   <!-- Timestamp -->
-  <span class="text-[0.6rem] flex font-light ml-5 self-start">{message.timestamp}</span>
+  <span class="ml-5 flex self-start text-[0.6rem] font-light">{message.timestamp}</span>
   <!-- Message -->
-  <span class="w-full text-right px-5 py-1 font-normal break-all">{message.content}</span>
+  <span class="w-full break-all px-5 py-1 text-right font-normal">{message.content}</span>
 </div>

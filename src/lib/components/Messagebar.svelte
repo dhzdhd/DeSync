@@ -2,7 +2,7 @@
   import { messages } from '$lib/stores/message';
   import type { Message } from '$lib/backend/interface';
   import { convertMessage } from '$lib/backend/converter';
-import { userDetails } from '$lib/backend/gun';
+  import { userDetails } from '$lib/backend/gun';
 
   let message: string;
 
@@ -32,9 +32,9 @@ import { userDetails } from '$lib/backend/gun';
 
 <svelte:window on:keydown={handleEnterPress} />
 
-<div class="flex flex-row items-center h-12 mx-5 justify-evenly text-white gap-3">
+<div class="mx-5 flex h-12 flex-row items-center justify-evenly gap-3 text-white">
   <!-- Add button -->
-  <button class="bg-dark_tertiary h-full aspect-square rounded-2xl">
+  <button class="aspect-square h-full rounded-2xl bg-dark_tertiary">
     <span class="fas fa-add" />
   </button>
   <!-- Message input -->
@@ -42,13 +42,13 @@ import { userDetails } from '$lib/backend/gun';
     on:input={() => (message = convertMessage(message))}
     bind:value={message}
     placeholder="Type something ..."
-    class="flex font-normal flex-grow-[1] h-full rounded-2xl bg-dark_tertiary px-2 border-2 border-dark_accent"
+    class="flex h-full flex-grow-[1] rounded-2xl border-2 border-dark_accent bg-dark_tertiary px-2 font-normal"
     type="text"
   />
   <!-- Send button -->
   <button
     on:click={submitMessage}
-    class="bg-dark_accent shadow-sm shadow-dark_accent h-full aspect-square rounded-2xl"
+    class="aspect-square h-full rounded-2xl bg-dark_accent shadow-sm shadow-dark_accent"
   >
     <span class="fas fa-paper-plane" />
   </button>

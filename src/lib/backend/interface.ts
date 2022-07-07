@@ -1,14 +1,14 @@
 export interface Message {
-    content: string,
-    author: string,
-    timestamp: string,
-};
+  content: string;
+  author: string;
+  timestamp: string;
+}
 
 export interface DirectMessage extends Message {
-    channel: string,
-};
+  channel: string;
+}
 
 export interface User {
-    username?: string;
-    password?: string;
-};
+  username?: string;
+  password?: string;
+}

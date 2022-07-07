@@ -9,6 +9,6 @@
   });
 </script>
 
-<div class="flex items-center justify-center w-screen h-screen bg-dark_primary">
+<div class="flex min-h-screen w-screen bg-dark_primary">
   <slot />
 </div>

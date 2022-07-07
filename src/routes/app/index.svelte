@@ -7,9 +7,9 @@
 </script>
 
 <div
-  class="flex flex-grow-[1] -order-0 basis-1 justify-end flex-col gap-2 items-end py-3 overflow-y-auto"
+  class="-order-0 flex flex-grow-[1] basis-1 flex-col items-end justify-end gap-2 overflow-y-auto py-3"
 >
   {#each $messages as item}
-    <Message message={{ content: item.content, isSelf: item.isSelf, timeStamp: item.timeStamp }} />
+    <Message message={{ content: item.content, author: item.author, timestamp: item.timestamp }} />
   {/each}
 </div>

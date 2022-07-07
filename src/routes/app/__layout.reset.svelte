@@ -15,15 +15,14 @@
   onMount(() => {
     initGun();
   });
-
 </script>
 
-<div class="bg-dark_primary h-screen w-screen flex flex-row py-5 gap-1">
+<div class="flex h-screen w-screen flex-row gap-1 bg-dark_primary py-5">
   <Navbar />
   <Channelbar />
-  <div class="flex flex-col items-start grow-[1] min-w-[40rem] gap-3">
+  <div class="flex min-w-[40rem] grow-[1] flex-col items-start gap-3">
     <Topbar />
-    <div class="flex flex-col flex-grow-[1] w-full py-5 rounded-2xl bg-dark_secondary">
+    <div class="flex w-full flex-grow-[1] flex-col rounded-2xl bg-dark_secondary py-5">
       <slot />
       <Messagebar />
     </div>

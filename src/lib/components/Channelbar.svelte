@@ -4,9 +4,9 @@
 </script>
 
 <nav
-  class="h-full w-64 min-w-[16rem] flex flex-col overflow-hidden overflow-y-auto items-center gap-4 px-5 text-white"
+  class="flex h-full w-64 min-w-[16rem] flex-col items-center gap-4 overflow-hidden overflow-y-auto px-5 text-white"
 >
-  <span class="text-left w-full sticky">Friends</span>
+  <span class="sticky w-full text-left">Friends</span>
   <ChannelbarItem />
   <ChannelbarItem />
   <ChannelbarItem />

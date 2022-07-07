@@ -15,13 +15,13 @@
 </script>
 
 <!-- Topbar -->
-<div class="flex flex-row justify-between w-full h-12 max-h-[3rem] text-white px-2">
+<div class="flex h-12 max-h-[3rem] w-full flex-row justify-between px-2 text-white">
   <!-- Avatar + Profile -->
   <div class="flex flex-row gap-3">
     <!-- Avatar -->
     <button
       on:click={() => (showMenu = !showMenu)}
-      class="h-full aspect-square rounded-full border-2 shadow-sm shadow-green-500 border-green-500"
+      class="aspect-square h-full rounded-full border-2 border-green-500 shadow-sm shadow-green-500"
     >
       <img alt="pfp" src="https://avatars.dicebear.com/api/bottts/{$userDetails.username}.svg" />
     </button>
@@ -35,14 +35,14 @@
       <div
         in:scale
         out:fade={{ duration: 150 }}
-        class="fixed mt-[4.5rem] ml-1 w-[12rem] py-5 flex items-center bg-dark_tertiary rounded-2xl"
+        class="fixed mt-[4.5rem] ml-1 flex w-[12rem] items-center rounded-2xl bg-dark_tertiary py-5"
       >
         <button on:click={signOut} class="w-full">Sign out</button>
       </div>
     {/if}
   </div>
   <!-- Buttons -->
-  <div class="flex items-center h-full aspect-square justify-center gap-5 text-xl">
+  <div class="flex aspect-square h-full items-center justify-center gap-5 text-xl">
     <!-- Menu -->
     <button>
       <span class="fas fa-bars" />

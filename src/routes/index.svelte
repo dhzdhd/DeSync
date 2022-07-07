@@ -1,12 +1,9 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
-
-  import '../app.css';
+  import Header from '$lib/components/LandingPage/Header.svelte';
 </script>
 
-<button
-  on:click={() => goto('/login')}
-  class="text-white text-6xl bg-dark_secondary p-5 rounded-2xl"
->
-  LOGIN
-</button>
+<div class="flex flex-col">
+  <Header />
+  <div class="mt-20 flex w-screen flex-col px-5 py-5 text-5xl text-slate-400" />
+</div>
