@@ -17,7 +17,7 @@
   });
 </script>
 
-<div class="flex h-screen w-screen flex-row gap-1 bg-dark_primary py-5">
+<div class="flex h-screen w-screen flex-row gap-1 bg-dark_primary py-5 px-3">
   <Navbar />
   <Channelbar />
   <div class="flex min-w-[40rem] grow-[1] flex-col items-start gap-3">

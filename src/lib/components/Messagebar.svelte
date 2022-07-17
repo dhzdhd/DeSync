@@ -3,8 +3,14 @@
   import type { Message } from '$lib/backend/interface';
   import { convertMessage } from '$lib/backend/converter';
   import { userDetails } from '$lib/backend/gun';
+  import EmojiConverter from 'emoji-js';
 
   let message: string;
+  const emoji = new EmojiConverter();
+  emoji.replace_mode = 'unified';
+  emoji.allow_native = true;
+
+  $: console.log(message);
 
   const getDate = (): string => {
     let today = new Date();
@@ -17,8 +23,7 @@
       return;
     }
 
-    $messages.push({ content: message, author: $userDetails.username!, timestamp: getDate() });
-    $messages = $messages;
+    $messages = [...$messages, { content: message, author: $userDetails.username!, timestamp: getDate() }];
 
     message = '';
   };
@@ -39,7 +44,7 @@
   </button>
   <!-- Message input -->
   <input
-    on:input={() => (message = convertMessage(message))}
+    on:input={() => (message = emoji.replace_colons(message))}
     bind:value={message}
     placeholder="Type something ..."
     class="flex h-full flex-grow-[1] rounded-2xl border-2 border-dark_accent bg-dark_tertiary px-2 font-normal"

@@ -12,3 +12,10 @@ export interface User {
   username?: string;
   password?: string;
 }
+
+export interface Guild {
+  id: bigint;
+  name: string;
+  desc: string;
+  icon?: string;
+}
